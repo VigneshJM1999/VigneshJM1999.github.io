@@ -3,110 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vignesh J M — Data & Business Analytics Professional</title>
+    <title>Vignesh J M | Data Analyst</title>
+    
+    <!-- Modern Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* Modern Color Palette & Variables */
         :root {
-            --primary-color: #0073b1;
-            --secondary-color: #29323c;
-            --background-color: #f3f2ef;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-muted: #666666;
+            --primary: #2563eb; /* Modern tech blue */
+            --primary-hover: #1d4ed8;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --transition: all 0.2s ease-in-out;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--background-color);
+            background-color: var(--background);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 5rem 2rem 6rem;
             text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .avatar {
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            border: 4px solid rgba(255, 255, 255, 0.1); 
+            margin-bottom: 1.5rem; 
+            object-fit: cover; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+
+        .avatar:hover {
+            transform: scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
         }
 
         header h2 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 1.2rem;
         }
 
         header p {
             font-size: 1rem;
-            opacity: 0.8;
+            color: #94a3b8;
+            margin-bottom: 2rem;
         }
 
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1100px;
+            margin: -3rem auto 2rem;
+            padding: 0 1.5rem;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .main-content {
+        .main-content, .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
+        /* Cards */
         section {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
         }
 
         section h3 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
+        section h3 i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Timeline / Item Styles */
         .item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .item:last-child {
             margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .item h4 {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-link {
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            background: #eff6ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .item-link:hover {
+            background: var(--primary);
+            color: white;
         }
 
         .item .meta {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             font-weight: 500;
         }
 
+        .item ul {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .item ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Tags */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -114,117 +243,150 @@
         }
 
         .skill-tag {
-            background: #eef3f8;
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 16px;
+            background: var(--background);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
             font-size: 0.9rem;
             font-weight: 500;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: #eff6ff;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 2rem;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 860px) {
             .container {
                 grid-template-columns: 1fr;
             }
+            header {
+                padding: 4rem 1rem 5rem;
+            }
         }
     </style>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <!-- Replace with a link to your actual professional photo -->
-    <img src="profile-photo.jpeg" alt="Vignesh J M" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 1rem; object-fit: cover;">
-    
-    <h1>Vignesh J M</h1>
-    <h2>Data Analyst | SQL, Python & Power BI</h2>
-    <p style="margin-bottom: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</p>
-    
-    <div style="display: flex; gap: 1rem; justify-content: center;">
-        <a href="my-resume.pdf" target="_blank" style="background: white; color: var(--primary-color); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 4px; font-weight: bold;"><i class="fas fa-file-pdf"></i> Resume</a>
-        <a href="https://github.com/VigneshJM1999" target="_blank" style="background: #24292e; color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 4px; font-weight: bold;"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/vignesh-j-m-b35b42144/" target="_blank" style="background: #0077b5; color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 4px; font-weight: bold;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </div>
-	</header>
+    <header>
+        <!-- Remove this img tag if you do not have a professional headshot -->
+        <img src="profile-photo.jpeg" alt="Vignesh J M" class="avatar">
+        
+        <h1>Vignesh J M</h1>
+        <h2>Data Analyst | SQL, Python & Power BI | 5+ Years Enterprise IT Experience</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</p>
+        
+        <div class="hero-links">
+            <a href="my-resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> View Resume</a>
+            <a href="https://github.com/VigneshJM1999" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/vignesh-j-m-b35b42144/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </header>
 
     <div class="container">
         <div class="main-content">
+            <!-- About Section -->
             <section>
-                <h3>About Me</h3>
-                <p>Enterprise IT professional with 5+ years of experience at Tata Consultancy Services, where I have worked across production support, SQL-based data validation, Python automation, stakeholder collaboration, and business problem-solving.</p>
+                <h3><i class="fas fa-user-circle"></i> About Me</h3>
+                <p>I am a techno-functional analytics professional combining over 5 years of enterprise IT experience with a PGDM in Data Science & Analytics from Great Lakes. My expertise lies at the intersection of data management, business intelligence, and executive strategy, utilizing tools like SQL, Python, and Power BI to transform complex datasets into actionable business decisions.</p>
                 <br>
-                <p>I completed my PGDM in Data Science & Analytics from Great Lakes Institute of Management and have built hands-on analytics capability using SQL, PostgreSQL, Python, Pandas, and Power BI. My project work includes customer retention and cohort analysis, customer segmentation, revenue analysis, churn analysis, and interactive dashboard development.</p>
+                <p>Having supported critical production environments and collaborated with cross-functional teams at Tata Consultancy Services, I bring a unique blend of rigorous data validation, stakeholder management, and operational discipline to my analytical work. My recent portfolio focuses heavily on customer retention economics, cohort behavior, and churn modeling—demonstrating my ability to look beyond simple dashboards to identify quantifiable revenue recovery and growth opportunities.</p>
             </section>
 
+            <!-- Projects Section -->
             <section>
-                <h3>Experience</h3>
+                <h3><i class="fas fa-chart-line"></i> Featured Analytics Projects</h3>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h4>Customer Retention Analytics & Revenue Recovery</h4>
+                        <a href="https://github.com/VigneshJM1999/Customer-Retention-Analytics" target="_blank" class="item-link">View Repository <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <p class="meta">PostgreSQL, Python (Pandas), Power BI • Jun 2026</p>
+                    <ul>
+                        <li>Analyzed ~500K UK e-commerce transactions to investigate revenue volatility and model long-term customer stability.</li>
+                        <li>Performed cohort segmentation and churn analysis, proving that while loyal customers represented only 31.9% of the base, they generated over 80% of total revenue.</li>
+                        <li>Modeled a targeted customer reactivation scenario identifying approximately £208K in potential recoverable revenue.</li>
+                        <li>Built a 4-page interactive Power BI dashboard for executive overview, cohort retention, segmentation, and revenue leakage.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h4>End-to-End Retail Analytics Dashboard</h4>
+                        <a href="https://github.com/VigneshJM1999/Online-Retail-Analytics" target="_blank" class="item-link">View Repository <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <p class="meta">SQL, Python, Power BI • Apr 2026</p>
+                    <ul>
+                        <li>Diagnosed YoY revenue decline (~4.46%) by analyzing seasonality, customer concentration, and product mix economics.</li>
+                        <li>Corrected aggregation granularity issues to properly segment high-value products vs. low-value volume drivers.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section>
+                <h3><i class="fas fa-briefcase"></i> Enterprise Experience</h3>
+                
                 <div class="item">
                     <h4>System Engineer</h4>
-                    <p class="meta">Tata Consultancy Services • Jun 2021 - Present • Chennai</p>
-                    <p>Support enterprise retail applications and business processes ensuring operational continuity and SLA compliance in a production environment.</p>
+                    <p class="meta">Tata Consultancy Services • May 2021 - Present • Chennai</p>
+                    <ul>
+                        <li>Support enterprise retail applications and business processes, ensuring operational continuity and SLA compliance in a high-stakes production environment.</li>
+                        <li>Execute SQL-based data validation and construct Python automation scripts to streamline regression testing and system health checks.</li>
+                        <li>Collaborate with cross-functional teams for requirement gathering, defect logging via JIRA, and communicating technical issues to non-technical stakeholders.</li>
+                    </ul>
                 </div>
+
                 <div class="item">
                     <h4>Machine Learning Research Intern</h4>
                     <p class="meta">Tactii (formerly TalentAccurate) • Jul 2020 - Oct 2020</p>
                 </div>
+
                 <div class="item">
                     <h4>Machine Learning Intern</h4>
                     <p class="meta">Verzeo • Apr 2020 - May 2020</p>
                 </div>
             </section>
-
-            <section>
-                <h3>Projects</h3>
-                <div class="item">
-                    <h4>Customer Retention Analytics & Revenue Recovery</h4>
-                    <p class="meta">Jun 2026</p>
-                    <p>Analyzed ~500K UK e-commerce transactions using PostgreSQL to evaluate retention behavior and customer segments.</p>
-                </div>
-                <div class="item">
-                    <h4>End-to-End Retail Analytics Dashboard</h4>
-                    <p class="meta">Apr 2026</p>
-                    <p>Built an end-to-end Retail Analytics project utilizing SQL, Python, and Power BI.</p>
-                </div>
-                <div class="item">
-                    <h4>Advanced SQL Business Case Studies</h4>
-                    <p class="meta">Nov 2025</p>
-                    <p>Applied advanced SQL techniques including CTEs and window functions for comprehensive business data analysis.</p>
-                </div>
-            </section>
         </div>
 
         <div class="sidebar">
+            <!-- Skills Section -->
             <section>
-                <h3>Core Skills</h3>
+                <h3><i class="fas fa-code"></i> Core Skills</h3>
                 <div class="skills-list">
                     <span class="skill-tag">SQL</span>
                     <span class="skill-tag">Python</span>
-                    <span class="skill-tag">PostgreSQL</span>
                     <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">PostgreSQL</span>
                     <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Cohort Analysis</span>
+                    <span class="skill-tag">Customer Segmentation</span>
+                    <span class="skill-tag">Churn Analysis</span>
+                    <span class="skill-tag">Data Visualization</span>
                     <span class="skill-tag">Business Analytics</span>
-                    <span class="skill-tag">EDA</span>
-                    <span class="skill-tag">PL/SQL</span>
-                    <span class="skill-tag">Root Cause Analysis</span>
+                    <span class="skill-tag">Databricks</span>
                 </div>
             </section>
 
+            <!-- Education Section -->
             <section>
-                <h3>Education</h3>
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                 <div class="item">
                     <h4>Great Lakes Institute of Management</h4>
                     <p class="meta">PGDM, Data Science & Analytics</p>
-                    <p class="meta">April 2024 - April 2026 • Grade: 3.95</p>
+                    <p class="meta">Apr 2024 - May 2026 • Grade: 3.95</p>
                 </div>
                 <div class="item">
                     <h4>Chennai Institute of Technology</h4>
@@ -233,19 +395,20 @@
                 </div>
             </section>
 
+            <!-- Certification Section -->
             <section>
-                <h3>Certifications</h3>
+                <h3><i class="fas fa-certificate"></i> Certifications</h3>
                 <div class="item">
-                    <h4>100 Days of Code: Complete Python Pro Bootcamp</h4>
+                    <h4>Databricks Fundamentals</h4>
+                    <p class="meta">Databricks Academy (TCS Sponsored) • Oct 2026</p>
+                </div>
+                <div class="item">
+                    <h4>100 Days of Code: Complete Python</h4>
                     <p class="meta">Udemy • Oct 2025</p>
                 </div>
                 <div class="item">
-                    <h4>AZ-204T00: Developing Solutions for Microsoft Azure</h4>
+                    <h4>AZ-204T00: Dev. Solutions for Azure</h4>
                     <p class="meta">Koenig Solutions Pvt. Ltd. • Jan 2025</p>
-                </div>
-                <div class="item">
-                    <h4>AWS Essentials</h4>
-                    <p class="meta">Udemy • Jan 2024</p>
                 </div>
             </section>
         </div>
